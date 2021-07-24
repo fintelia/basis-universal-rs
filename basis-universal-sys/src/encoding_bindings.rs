@@ -469,19 +469,26 @@ extern "C" {
     pub fn compressor_params_clear(params: *mut CompressorParams);
 }
 extern "C" {
-    pub fn compressor_params_get_or_create_source_image(
-        params: *mut CompressorParams,
-        index: u32,
-    ) -> *mut basisu_image;
-}
-extern "C" {
     pub fn compressor_params_resize_source_image_list(
         params: *mut CompressorParams,
         size: size_t,
     );
 }
 extern "C" {
+    pub fn compressor_params_get_or_create_source_image(
+        params: *mut CompressorParams,
+        index: u32,
+    ) -> *mut basisu_image;
+}
+extern "C" {
     pub fn compressor_params_clear_source_image_list(params: *mut CompressorParams);
+}
+extern "C" {
+    pub fn compressor_params_get_or_create_source_mipmap_image(
+        params: *mut CompressorParams,
+        index: u32,
+        level: u32,
+    ) -> *mut basisu_image;
 }
 extern "C" {
     pub fn compressor_params_set_status_output(

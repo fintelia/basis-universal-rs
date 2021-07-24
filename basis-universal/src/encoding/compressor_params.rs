@@ -71,6 +71,20 @@ impl CompressorParams {
         }
     }
 
+    pub fn source_mipmap_image_mut(
+        &mut self,
+        image_index: u32,
+        level: u32,
+    ) -> CompressorImageRef {
+        unsafe {
+            CompressorImageRef(sys::compressor_params_get_or_create_source_mipmap_image(
+                self.0, 
+                image_index,
+                level,
+            ))
+        }
+    }
+
     /// Resizes the source image list. If the provided length is shorter than the list, the data
     /// beyond the provided length is truncated.
     pub fn resize_source_image_list(

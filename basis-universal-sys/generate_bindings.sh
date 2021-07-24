@@ -65,6 +65,7 @@ bindgen vendor/encoding_wrapper.cpp -o src/encoding_bindings.rs \
   --whitelist-function compressor_params_get_or_create_source_image \
   --whitelist-function compressor_params_resize_source_image_list \
   --whitelist-function compressor_params_clear_source_image_list \
+  --whitelist-function compressor_params_get_or_create_source_mipmap_image \
   \
   --whitelist-function compressor_params_set_status_output \
   --whitelist-function compressor_params_set_quality_level \
